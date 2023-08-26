@@ -31,6 +31,10 @@ export default {
     '@nuxtjs/tailwindcss',
   ],
 
+  tailwindcss: {
+    fontFamily: 'mono'
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 

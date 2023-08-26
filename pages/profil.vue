@@ -1,8 +1,8 @@
 <template>
   <div class="constructor font-bold">
-    <HeaderWeb/>
-    <p>hi ini adalah utama</p>
-    <FooterWeb/>
+    <HeaderWeb />
+    <p class="text-lg .box">hi ini adalah profil</p>
+    <FooterWeb />
   </div>
 </template>
 
