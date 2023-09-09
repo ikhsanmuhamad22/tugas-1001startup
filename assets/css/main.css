@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
+  outline: solid red 1px;
+} */
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.canvas-carts {
+  height: 300px;
+}
+.cart-bar {
+  height: 250px;
+}
+
+.btn {
+  @apply p-2 rounded-md border font-medium text-black  hover:opacity-80 flex items-center justify-center gap-3;
+}
+
+.btn-small {
+  @apply p-1 rounded-md border font-medium text-black  hover:opacity-80 flex items-center justify-center gap-3;
+}
+
+.btn-circle {
+  @apply p-2 border font-medium text-white  hover:opacity-80 flex items-center justify-center gap-3 rounded-full;
+}
+
+.btn-info {
+  @apply text-white  bg-blue-600;
+}
+
+.btn-success {
+  @apply text-white  bg-green-500;
+}
+
+.btn-danger {
+  @apply text-white  bg-red-600;
+}
+
+.btn-warning {
+  @apply text-white  bg-yellow-500;
+}
+
+.btn-light {
+  @apply bg-white text-black;
+}
+
+.btn-dark {
+  @apply text-white  bg-slate-800;
+}
