@@ -22,9 +22,15 @@
       </div>
     </div>
 
-    <ModalAddTaskVue v-if="addTask" @close="addTask = false"></ModalAddTaskVue>
+    <ModalAddTaskVue
+      v-if="addTask"
+      :tasks="tasks"
+      @input-task="inputTask"
+      @close="addTask = false"
+    ></ModalAddTaskVue>
 
-    <taskItem :tasks="filterResult"></taskItem>
+    <p v-if="tasks.length === 0" class="p-2">belum ada tugas</p>
+    <taskItem v-else :tasks="filterResult"></taskItem>
   </div>
 </template>
 
@@ -39,23 +45,7 @@ export default {
   },
   data() {
     return {
-      tasks: [
-        {
-          id: 1,
-          title: 'Belajar',
-          isDone: false,
-        },
-        {
-          id: 2,
-          title: 'Tidur',
-          isDone: false,
-        },
-        {
-          id: 3,
-          title: 'Main game',
-          isDone: false,
-        },
-      ],
+      tasks: [],
       search: '',
       category: 'semua',
       addTask: false,
@@ -76,9 +66,10 @@ export default {
       return this.tasks
     },
   },
-
-  // mounted() {
-  //   console.log(this.filterResult)
-  // },
+  methods: {
+    inputTask(task) {
+      this.tasks.push(task)
+    },
+  },
 }
 </script>

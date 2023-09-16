@@ -6,9 +6,9 @@
           <p class="text-2xl font-bold">1001 startup</p>
         </nuxt-link>
         <ul class="flex space-x-4">
-          <nuxt-link to="/todo">
-            <li><a href="#" class="">Todo</a></li>
-          </nuxt-link>
+          <li>
+            <nuxt-link to="/todo">Todo</nuxt-link>
+          </li>
         </ul>
       </nav>
     </div>

@@ -9,7 +9,7 @@
       class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto"
     >
       <div class="modal-content py-4 text-left px-6">
-        <div class="p-6">
+        <form class="p-6" @submit.prevent="tambahTask">
           <h1 class="text-2xl font-semibold mb-4">Add Task</h1>
           <div class="mb-4">
             <label for="title" class="block text-gray-700 font-medium mb-2"
@@ -17,6 +17,7 @@
             >
             <input
               id="title"
+              v-model="task.title"
               type="text"
               name="title"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
@@ -29,11 +30,12 @@
             >
             <select
               id="category"
+              v-model="task.isDone"
               name="category"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             >
-              <option value="selesai">selesai</option>
-              <option value="belum-selesai">belum selesai</option>
+              <option :value="false">belum selesai</option>
+              <option :value="true">selesai</option>
             </select>
           </div>
           <div class="text-end">
@@ -44,13 +46,39 @@
               Close
             </button>
             <button
+              type="submit"
               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
               Submit
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    tasks: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      task: {
+        title: '',
+        isDone: false,
+      },
+    }
+  },
+  methods: {
+    tambahTask() {
+      this.$emit('input-task', this.task)
+      this.$emit('close')
+    },
+  },
+}
+</script>
