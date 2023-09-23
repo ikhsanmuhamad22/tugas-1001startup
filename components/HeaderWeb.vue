@@ -9,6 +9,9 @@
           <li>
             <nuxt-link to="/todo">Todo</nuxt-link>
           </li>
+          <li>
+            <nuxt-link to="/article">Article</nuxt-link>
+          </li>
         </ul>
       </nav>
     </div>
