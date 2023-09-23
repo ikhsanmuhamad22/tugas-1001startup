@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="w-10/12 mx-auto">
     <HeaderWeb />
     <nuxt />
   </div>
